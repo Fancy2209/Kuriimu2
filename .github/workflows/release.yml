@@ -60,38 +60,38 @@ jobs:
     # Publish applications
     - name: Publish EtoForms for Windows
       run: |
-        dotnet publish ./src/Kuriimu2.EtoForms/Kuriimu2.EtoForms.Wpf/Kuriimu2.EtoForms.Wpf.csproj --output ./dist/final/Eto/Wpf --configuration Release --framework net7.0 --runtime win-x64 /p:PublishSingleFile=true
+        dotnet publish ./src/Kuriimu2.EtoForms/Kuriimu2.EtoForms.Wpf/Kuriimu2.EtoForms.Wpf.csproj --output ./dist/final/Eto/Wpf --configuration Release --framework netcoreapp31 --runtime win-x64 /p:PublishSingleFile=true
         mv ./dist/final/Eto/Wpf/Kuriimu2.EtoForms.Wpf.exe ./dist/final/Eto/Wpf/Kuriimu2.exe
         rm ./dist/final/Eto/Wpf/*.pdb
 
     - name: Publish EtoForms for Linux
       run: |
-        dotnet publish ./src/Kuriimu2.EtoForms/Kuriimu2.EtoForms.Gtk/Kuriimu2.EtoForms.Gtk.csproj --output ./dist/final/Eto/Gtk --configuration Release --framework net7.0 --runtime linux-x64 /p:PublishSingleFile=true
+        dotnet publish ./src/Kuriimu2.EtoForms/Kuriimu2.EtoForms.Gtk/Kuriimu2.EtoForms.Gtk.csproj --output ./dist/final/Eto/Gtk --configuration Release --framework netcoreapp31 --runtime linux-x64 /p:PublishSingleFile=true
         mv ./dist/final/Eto/Gtk/Kuriimu2.EtoForms.Gtk ./dist/final/Eto/Gtk/Kuriimu2
         rm ./dist/final/Eto/Gtk/*.pdb
 
     - name: Publish EtoForms for Mac
       run: |
-        dotnet publish ./src/Kuriimu2.EtoForms/Kuriimu2.EtoForms.Mac/Kuriimu2.EtoForms.Mac.csproj --configuration Release --framework net7.0 --runtime osx-x64 /p:PublishSingleFile=true
+        dotnet publish ./src/Kuriimu2.EtoForms/Kuriimu2.EtoForms.Mac/Kuriimu2.EtoForms.Mac.csproj --configuration Release --framework netcoreapp31 --runtime osx-x64 /p:PublishSingleFile=true
         mkdir ./dist/final/Eto/Mac
-        mv ./dist/Release/net7.0/Kuriimu2.EtoForms.Mac.app ./dist/final/Eto/Mac/Kuriimu2.app
+        mv ./dist/Release/netcoreapp31/Kuriimu2.EtoForms.Mac.app ./dist/final/Eto/Mac/Kuriimu2.app
         mv ./dist/final/Eto/Mac/Kuriimu2.app/Contents/MacOS/Kuriimu2.EtoForms.Mac ./dist/final/Eto/Mac/Kuriimu2.app/Contents/MacOS/Kuriimu2
 
     - name: Publish CommandLine for Windows
       run: |
-        dotnet publish ./src/Kuriimu2.Cmd/Kuriimu2.Cmd.csproj --output ./dist/final/Cmd/Windows --configuration Release --framework net7.0 --runtime win-x64 /p:PublishSingleFile=true
+        dotnet publish ./src/Kuriimu2.Cmd/Kuriimu2.Cmd.csproj --output ./dist/final/Cmd/Windows --configuration Release --framework netcoreapp31 --runtime win-x64 /p:PublishSingleFile=true
         mv ./dist/final/Cmd/Windows/Kuriimu2.Cmd.exe ./dist/final/Cmd/Windows/Kuriimu2.exe
         rm ./dist/final/Cmd/Windows/*.pdb
 
     - name: Publish CommandLine for Linux
       run: |
-        dotnet publish ./src/Kuriimu2.Cmd/Kuriimu2.Cmd.csproj --output ./dist/final/Cmd/Linux --configuration Release --framework net7.0 --runtime linux-x64 /p:PublishSingleFile=true
+        dotnet publish ./src/Kuriimu2.Cmd/Kuriimu2.Cmd.csproj --output ./dist/final/Cmd/Linux --configuration Release --framework netcoreapp31 --runtime linux-x64 /p:PublishSingleFile=true
         mv ./dist/final/Cmd/Linux/Kuriimu2.Cmd ./dist/final/Cmd/Linux/Kuriimu2
         rm ./dist/final/Cmd/Linux/*.pdb
 
     - name: Publish CommandLine for Mac
       run: |
-        dotnet publish ./src/Kuriimu2.Cmd/Kuriimu2.Cmd.csproj --output ./dist/final/Cmd/Mac --configuration Release --framework net7.0 --runtime osx-x64 /p:PublishSingleFile=true
+        dotnet publish ./src/Kuriimu2.Cmd/Kuriimu2.Cmd.csproj --output ./dist/final/Cmd/Mac --configuration Release --framework netcoreapp31 --runtime osx-x64 /p:PublishSingleFile=true
         mv ./dist/final/Cmd/Mac/Kuriimu2.Cmd ./dist/final/Cmd/Mac/Kuriimu2
         rm ./dist/final/Cmd/Mac/*.pdb
 
